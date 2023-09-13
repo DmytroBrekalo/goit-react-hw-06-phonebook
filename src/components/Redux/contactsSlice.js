@@ -12,6 +12,7 @@ const contactsSlice = createSlice({
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
   },
+
   reducers: {
     add: (state, action) => {
       state.contacts.push(action.payload);
@@ -33,4 +34,5 @@ export const persistedContacts = persistReducer(
   persistConfig,
   contactsSlice.reducer
 );
+
 export const { add, remove } = contactsSlice.actions;
