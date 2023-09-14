@@ -5,25 +5,25 @@ import { ContactList } from './ContactList/ContactList';
 import style from './App.module.css';
 
 export const App = () => {
-    const { contacts } = useSelector(state => state.contacts);
-    const stateFilter = useSelector(state => state.filter);
+  // const { contacts } = useSelector(state => state.contacts);
+  // const stateFilter = useSelector(state => state.filter);
 
-    const getFilteredPerson = () => {
-        const normalisedFilter = stateFilter.toLowerCase();
+  // const getFilteredPerson = () => {
+  //   const normalisedFilter = stateFilter.toLowerCase();
 
-        return contacts.filter(contact =>
-            contact.name.toLowerCase().includes(normalisedFilter)
-        );
-    };
+  //   return contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(normalisedFilter)
+  //   );
+  // };
 
-    return (
-        <div className={style.main_section}>
-            <h1>Phonebook</h1>
-            <ContactForm contactsList={contacts} />
+  return (
+    <div className={style.main_section}>
+      <h1>Phonebook</h1>
+      <ContactForm />
 
-            <h2>Contacts</h2>
-            <Filter />
-            <ContactList data={getFilteredPerson()} />
-        </div>
-    );
+      <h2>Contacts</h2>
+      <Filter />
+      <ContactList />
+    </div>
+  );
 };
